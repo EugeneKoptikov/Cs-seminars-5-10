@@ -34,21 +34,25 @@ void PrintArray(int[] collection)
         {
             Console.Write("[");
         }
+
         Console.Write(collection[index]);
+
         if (index < collection.Length - 1)
         {
             Console.Write(", ");
         }
+
         if (index == collection.Length - 1)
         {
-             Console.WriteLine("]");
+            Console.WriteLine("]");
         }
+        
         index++;       
     }
 }
 
 // Create a new void method to sum odd element values.
- void SumOddElements(int[] collection)
+void SumOddElements(int[] collection)
 {
     int sum = 0;
     for (int index = 0; index < collection.Length; index++)
