@@ -51,7 +51,7 @@ void PrintArray(float[] collection)
     }
 }
 
-// Find the maximum element of an array.
+// Find the maximum element of the array.
 float MaxElement(float[] collection)
 {
     float max = collection[0];
@@ -67,7 +67,7 @@ float MaxElement(float[] collection)
     return max;
 }
 
-// Find the minimum element of an array.
+// Find the minimum element of the array.
 float MinElement(float[] collection)
 {
     float min = collection[0];
