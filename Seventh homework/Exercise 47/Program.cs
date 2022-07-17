@@ -63,7 +63,7 @@ int Number(string str)
 }
 
 // An array initialization.
-int[,] array = new int[strings, columns];
+double[,] array = new double[strings, columns];
 
 // Filling the array.
 void RandomFillArray(double[,] collection)
