@@ -1,12 +1,12 @@
-﻿// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+﻿// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
 
-// input
-Console.WriteLine("Input size of strings (m): ");
+// Input
+Console.WriteLine("Input number in string (m): ");
 string m = Console.ReadLine();
-int strings = Number(m);
-Console.WriteLine("Input size of columns (n): ");
+int stringNumber = Number(m);
+Console.WriteLine("Input number in column (n): ");
 string n = Console.ReadLine();
-int columns = Number(n);
+int columnNumber = Number(n);
 
 // The method for checking input values.
 int Number(string str)
@@ -62,23 +62,22 @@ int Number(string str)
     return number;
 }
 
-// An array initialization.
-int[,] array = new int[strings, columns];
+// An array initialization and filling it.
+int[,] array = new int[5, 5];
 
-// Filling the array.
-void RandomFillArray(double[,] collection)
+void RandomFillArray(int[,] collection)
 {
     for (int index = 0; index < collection.GetLength(0); index++)
     {
         for (int jndex = 0; jndex < collection.GetLength(1); jndex++)
         {
-            collection[index, jndex] = new Random().Next(-100, 100) + new Random().NextDouble();
+            collection[index, jndex] = new Random().Next(-100, 100);
         }
     }
 }
 
-// Printing the array.
-void PrintArray(double[,] collection)
+// Printing the array and the element.
+void PrintArray(int[,] collection)
 {
     for (int index = 0; index < collection.GetLength(0); index++)
     {
@@ -89,7 +88,7 @@ void PrintArray(double[,] collection)
                 Console.Write("[");
             }
 
-            Console.Write(string.Format("{0:N2}", collection[index, jndex]));
+            Console.Write(collection[index, jndex]);
 
             if (jndex < collection.GetLength(1) - 1)
             {
@@ -105,5 +104,25 @@ void PrintArray(double[,] collection)
     }
 }
 
+void PrintArrayElement(int[,] collection, int arg1, int arg2)
+{
+    if (arg1 > 0 && arg1 < collection.GetLength(0))
+    {
+        if (arg2 > 0 && arg2 < collection.GetLength(1)) 
+        {
+            Console.WriteLine("Value of array element [" + arg1 + ", " + arg2 + "]: " + collection[arg1, arg2]);
+        }
+        else 
+        {
+            Console.WriteLine("This element [" + arg1 + ", " + arg2 + "] does not exist in the array.");
+        }
+    }
+    else
+    {
+        Console.WriteLine("This element [" + arg1 + ", " + arg2 + "] does not exist in the array.");
+    }
+}
+
 RandomFillArray(array);
 PrintArray(array);
+PrintArrayElement(array, stringNumber, columnNumber);
